@@ -1,0 +1,50 @@
+Sarahs-MacBook-Pro:Desktop skaplan$ mkdir branch_time
+Sarahs-MacBook-Pro:Desktop skaplan$ cd branch_time
+Sarahs-MacBook-Pro:branch_time skaplan$ git init
+Initialized empty Git repository in /Users/skaplan/Desktop/branch_time/.git/
+Sarahs-MacBook-Pro:branch_time skaplan$ touch first.txt
+Sarahs-MacBook-Pro:branch_time skaplan$ git add .
+Sarahs-MacBook-Pro:branch_time skaplan$ git commit -m "adding first.txt"
+[master (root-commit) 0e7f784] adding first.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 first.txt
+Sarahs-MacBook-Pro:branch_time skaplan$ git branch amazing_feature
+Sarahs-MacBook-Pro:branch_time skaplan$ git branch
+  amazing_feature
+* master
+Sarahs-MacBook-Pro:branch_time skaplan$ git checkout amazing_feature
+Switched to branch 'amazing_feature'
+Sarahs-MacBook-Pro:branch_time skaplan$ touch best.txt
+Sarahs-MacBook-Pro:branch_time skaplan$ git add .
+Sarahs-MacBook-Pro:branch_time skaplan$ git commit -m "added best.txt"
+[amazing_feature f1ef1c6] added best.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 best.txt
+Sarahs-MacBook-Pro:branch_time skaplan$ git checkout master
+Switched to branch 'master'
+Sarahs-MacBook-Pro:branch_time skaplan$ git merge amazing_feature
+Updating 0e7f784..f1ef1c6
+Fast-forward
+ best.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 best.txt
+Sarahs-MacBook-Pro:branch_time skaplan$ git branch
+  amazing_feature
+* master
+Sarahs-MacBook-Pro:branch_time skaplan$ git log
+commit f1ef1c6e8b636a0adaa90edd2fd39faae567b815 (HEAD -> master, amazing_feature)
+Author: Sarah Kaplan <skaplan520@gmail.com>
+Date:   Tue Jul 10 20:00:05 2018 -0400
+
+    added best.txt
+
+commit 0e7f784f5465309d7a4ef5553d13bc212955bc12
+Author: Sarah Kaplan <skaplan520@gmail.com>
+Date:   Tue Jul 10 19:59:14 2018 -0400
+
+    adding first.txt
+Sarahs-MacBook-Pro:branch_time skaplan$ git branch -D amazing_feature
+Deleted branch amazing_feature (was f1ef1c6).
+Sarahs-MacBook-Pro:branch_time skaplan$ git branch
+* master
+Sarahs-MacBook-Pro:branch_time skaplan$ 
