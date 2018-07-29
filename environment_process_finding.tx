@@ -1,0 +1,35 @@
+PART I
+
+1. ➜  ~ export FIRST_NAME=Sarah
+2. ➜  ~ echo $FIRST_NAME
+Sarah
+3. ➜  ~ echo $PATH
+/Users/skaplan/.nvm/versions/node/v10.6.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/skaplan/.rvm/bin
+
+4. PATH is an environment variable that the terminal program uses to find programs. (It's the full path the the programs for commands like ls etc.)
+5. You create environment variables so that you have a faster way to reference a variable that you use frequently.
+6. To permanently save an environment variable, open .zshrc file and add the variable (ex: export FIRST_NAME=Sarah)
+7. A program that is currently being run on your computer.
+8. ps aux
+9. A PID is a number that uniquely identifies a process running on your computer.
+10. To terminate a process, use the "kill" command with the PID for the process you want to end.
+11. The command "kill" sends the signal "TERM" to terminate a process, which might not be picked up if a program is fozen. In contrast, the "kill -9" command sends a KILL signal, which is not ignorable.
+12. -i
+13. -B
+14. -C
+15. -A
+16. -w
+17. -n
+
+PART II
+
+1. find ~/Desktop -name "learn"
+2. find ~/Desktop -name "P*"
+3. find ~/Desktop -name "*.txt"
+4. find ~/Desktop/views -name "*data*"
+5. grep -c "Elie" instructors.txt
+6. grep -w "P*" instructors.txt
+7. grep -ni "z*" instructors.txt
+
+
+
