@@ -1,0 +1,26 @@
+Part I
+
+1. touch restricted.txt
+2. chmod 600 restricted.txt
+3. chmod ugo+rwx restricted.txt
+4.  Desktop mkdir secret_files
+➜  Desktop cd secret_files
+➜  secret_files touch first_secret.txt
+➜  secret_files mkdir classified
+➜  secret_files cd classified 
+➜  classified touch super_secret.txt
+
+5. ➜  classified cd ..
+➜  secret_files cd ..
+➜  Desktop chmod 770 secret_files
+
+6. ln restricted.txt hard_link
+7. ➜  Desktop cd secret_files
+➜  secret_files ln -s classified ~/Desktop/classified_link
+
+Part II
+
+1.  sort vegetables.txt
+2. wc -l vegetables.txt
+3. tail -3 vegetables.txt > last_three.txt
+4. cat vegetables.txt | grep Broccoli | wc -l
