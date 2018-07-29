@@ -1,0 +1,34 @@
+Part I
+
+➜  Desktop mkdir first
+➜  Desktop cd first
+➜  first touch person.txt
+➜  first mv person.txt another.txt
+➜  first cp another.txt copy.txt
+➜  first rm copy.txt
+➜  first cd ..
+➜  Desktop cp -r first second
+➜  Desktop rmdir second
+rmdir: second: Directory not empty
+➜  Desktop rm -rf second
+➜  Desktop 
+
+Part II
+
+1. man brings up the manual for Terminal. To scroll, use arrow keys (or scroll with two fingers on trackpad). To get out of man, type "q"
+2. For ls, the -a flag includes files that begin with '.' in the list. The -l flag lists files in long format, which displays additional information including the owner, group name, and number of bytes in each file.
+3. curl https://www.google.com > google.html
+4. less google.html 
+5. less google.html
+   /hplogo (pattern wasn't found, but I tried searching for other text I could see in the file and it was found)
+6. Option -> to jump forward, Option <-- to jump back
+7. Ctrl + e
+8. Ctrl + a
+9. Ctrl + w (cuts the word directly behind the cursor)
+10. The terminal is a program that lets the user interact with a shell. The shell is the program that actually runs the commands that are typed into the terminal.
+11. An absolute path always starts from the root directory and describes the full path. 
+12. A relative path is a path from the present direction.
+13. A flag adds additional information to a command (examples: -r -rf for the rm command and -a for the ls command)
+14. When a directory is not empty, the -r flag when used with rm command goes through each folder and file to remove it and the -f flag forces removal
+
+
