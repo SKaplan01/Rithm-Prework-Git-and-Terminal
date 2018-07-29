@@ -1,0 +1,53 @@
+1. mkdir learn_git_again
+2. cd learn_git_again
+3. touch third.txt
+4. ➜  learn_git_again git init
+Initialized empty Git repository in /Users/skaplan/Desktop/learn_git_again/.git/
+➜  learn_git_again git:(master) ✗ 
+
+5. git add third.txt
+6. ➜  learn_git_again git:(master) ✗ git commit -m "adding third.txt"
+7. ➜  learn_git_again git:(master) git log
+commit d49fdb31f293e312db3beb7c8253546c0f39d6b1 (HEAD -> master)
+Author: Sarah Kaplan <skaplan520@gmail.com>
+Date:   Sun Jul 29 19:43:42 2018 -0400
+
+    adding third.txt
+    
+8. ➜  learn_git_again git:(master) touch fourth.txt
+9. git add fourth.txt
+10.  git commit -m "adding fourth.txt"
+11. rm third.txt
+12. git add -A
+13. ➜  learn_git_again git:(master) ✗ git commit -m "removing third.txt"
+[master 5f02f88] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+ 
+ 14. ➜  learn_git_again git:(master) git log
+commit 5f02f887436397f24ed94aeef53cf1dfd45267a7 (HEAD -> master)
+Author: Sarah Kaplan <skaplan520@gmail.com>
+Date:   Sun Jul 29 19:48:39 2018 -0400
+
+    removing third.txt
+
+commit d433142f07ffdebffd24b1dd0b53432051edbab2
+Author: Sarah Kaplan <skaplan520@gmail.com>
+Date:   Sun Jul 29 19:45:57 2018 -0400
+
+    adding fourth.txt
+
+commit d49fdb31f293e312db3beb7c8253546c0f39d6b1
+Author: Sarah Kaplan <skaplan520@gmail.com>
+Date:   Sun Jul 29 19:43:42 2018 -0400
+
+    adding third.txt
+
+15. ➜  learn_git_again git:(master) git config --global core.pager cat
+
+16. ➜  learn_git_again git:(master) cat ~/.gitconfig
+[user]
+	name = Sarah Kaplan
+	email = skaplan520@gmail.com
+[core]
+	pager = cat
