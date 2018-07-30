@@ -1,0 +1,51 @@
+PART I
+
+1. git clean removes unmerged, untracked files from a directory (removes files that are not under version control)
+2. -d removes untracked directions in addition to files. -f forces removal. If any directories are managed by a different git repository (they have a .git file), the -f flag needs to be used twice to remove them.
+3. git checkout -b NAME_OF_BRANCH (creates new branch)
+4. A fast-forward merge happens when git can easily tell when the commits happened and sequence them chronologically.
+   A recursive merge happens when git cannot easily determine the order in which commits occured. Then git uses an algorithm to merge the branches.
+5. git checkout NAME_OF_BRANCH
+6. If the modified file has not been staged, use git checkout. If it's been commited, use git reset (--hard --mixed or --soft) and include the SHA for the version you want to revert to (all commits after this SHA are removed, moved back to the working directory or the staging area, depending on whether the reset is hard, mixed, or soft.
+7. git branch -D NAME_OF_BRANCH
+8. git diff shows you changes between your last commit (or a certain SHA) and the current code.
+9. git rm --cached NAME_OF_FILE
+10. A merge conflict happens when the same file has been changed and committed on different branches. Then git does not know which commit to use and the user needs to resolve it.
+
+PART II
+
+➜  Desktop mkdir merge_conflicts_again
+➜  Desktop cd merge_conflicts_again
+➜  merge_conflicts_again git init
+Initialized empty Git repository in /Users/skaplan/Desktop/merge_conflicts_again/.git/
+➜  merge_conflicts_again git:(master) echo hello world > first.txt
+➜  merge_conflicts_again git:(master) ✗ git add .
+➜  merge_conflicts_again git:(master) ✗ git commit -m "first commit"
+[master (root-commit) 4b8f781] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 first.txt
+➜  merge_conflicts_again git:(master) git checkout -b new_branch
+Switched to a new branch 'new_branch'
+➜  merge_conflicts_again git:(new_branch) echo green > favorite_color.txt
+➜  merge_conflicts_again git:(new_branch) ✗ git add .
+➜  merge_conflicts_again git:(new_branch) ✗ git commit -m "adding favorite_color.txt"
+[new_branch d212452] adding favorite_color.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 favorite_color.txt
+➜  merge_conflicts_again git:(new_branch) git checkout master
+Switched to branch 'master'
+➜  merge_conflicts_again git:(master) echo blue > favorite_color.txt
+➜  merge_conflicts_again git:(master) ✗ git add .
+➜  merge_conflicts_again git:(master) ✗ git commit -m "adding favorite_color.txt on the master branch"
+[master 19fefbe] adding favorite_color.txt on the master branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 favorite_color.txt
+➜  merge_conflicts_again git:(master) git merge new_branch
+Auto-merging favorite_color.txt
+CONFLICT (add/add): Merge conflict in favorite_color.txt
+Automatic merge failed; fix conflicts and then commit the result.
+➜  merge_conflicts_again git:(master) ✗ open favorite_color.txt
+➜  merge_conflicts_again git:(master) ✗ git add .
+➜  merge_conflicts_again git:(master) ✗ git commit -m "fixing merge conflict"
+[master 41afa21] fixing merge conflict
+➜  merge_conflicts_again git:(master) 
