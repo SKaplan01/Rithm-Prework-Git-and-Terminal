@@ -1,0 +1,21 @@
+Part I
+
+1. ➜  ~ mkdir random_practice_repo
+➜  ~ cd random_practice_repo
+➜  random_practice_repo echo hello world > first.txt
+➜  random_practice_repo cat first.txt
+hello world
+➜  random_practice_repo touch test.txt
+➜  random_practice_repo git add .
+fatal: Not a git repository (or any of the parent directories): .git
+➜  random_practice_repo git init
+Initialized empty Git repository in /Users/skaplan/random_practice_repo/.git/
+➜  random_practice_repo git:(master) ✗ git add .
+➜  random_practice_repo git:(master) ✗ git commit -m "first commit"
+[master (root-commit) 946ffda] first commit
+ 2 files changed, 1 insertion(+)
+ create mode 100644 first.txt
+ create mode 100644 test.txt
+➜  random_practice_repo git:(master) 
+
+2. 
