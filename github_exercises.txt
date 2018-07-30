@@ -18,4 +18,58 @@ Initialized empty Git repository in /Users/skaplan/random_practice_repo/.git/
  create mode 100644 test.txt
 ➜  random_practice_repo git:(master) 
 
-2. 
+2. ➜  random_practice_repo git:(master) git remote add origin git@github.com:SKaplan01/random_practice_repo.git
+git push -u origin master
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 262 bytes | 131.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To github.com:SKaplan01/random_practice_repo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+➜  random_practice_repo git:(master) 
+
+3. ➜  ~ git clone git@github.com:SKaplan01/git_practice.git
+Cloning into 'git_practice'...
+remote: Counting objects: 6, done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 6
+Receiving objects: 100% (6/6), done.
+➜  ~ cd git_practice
+➜  git_practice git:(master) echo testing > test.txt
+➜  git_practice git:(master) ✗ git add .
+➜  git_practice git:(master) ✗ git commit -m "adding test.txt"
+[master 811700c] adding test.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+➜  git_practice git:(master) git push origin master 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 290.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:SKaplan01/git_practice.git
+   ef403a7..811700c  master -> master
+➜  git_practice git:(master) 
+
+Then I want on GitHub and made a pull request using "compare across forks"
+
+4. ➜  git_practice git:(master) git checkout -B second_branch
+Switched to a new branch 'second_branch'
+➜  git_practice git:(second_branch) touch second.txt
+➜  git_practice git:(second_branch) ✗ git add .
+➜  git_practice git:(second_branch) ✗ git commit -m "adding second.txt"
+[second_branch d12ac9c] adding second.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 second.txt
+➜  git_practice git:(second_branch) git push origin second_branch
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 313 bytes | 313.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:SKaplan01/git_practice.git
+ * [new branch]      second_branch -> second_branch
+➜  git_practice git:(second_branch) 
+
+5. I created the pull request on my own master branch from the second_branch.
